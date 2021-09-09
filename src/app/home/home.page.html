@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Control
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Control</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content>
+    <ion-item [routerLink]="['/colores']"> <!--routerLink para navegacion de paginas-->
+      <ion-label>Color</ion-label>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let f of focos">
+        <ion-label *ngIf="f.estado; then solIcon else lunaIcon" class="editIcon"></ion-label>
+        <ion-label>{{f.nombre}}</ion-label>
+        <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
+      </ion-item>
+
+      <ng-template #solIcon>
+        <ion-icon name="sunny-outline"></ion-icon>
+      </ng-template>
+      <ng-template #lunaIcon>
+        <ion-icon name="moon-outline"></ion-icon>
+      </ng-template>
+    </ion-list>
+  </ion-content>
+
+
+
+
 </ion-content>
