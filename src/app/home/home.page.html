@@ -9,7 +9,9 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Control</ion-title>
+      <ion-title size="large">Control</ion-title><!--otro comentario-->
+      <ion-item></ion-item>
+      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -19,7 +21,7 @@
     </ion-item>
 
     <ion-list>
-      <ion-item *ngFor="let f of focos">
+      <ion-item *ngFor="let f of focos"><!--comentario en focos-->
         <ion-label *ngIf="f.estado; then solIcon else lunaIcon" class="editIcon"></ion-label>
         <ion-label>{{f.nombre}}</ion-label>
         <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
