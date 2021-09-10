@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Colores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group value="Blanco" (ionChange)="cambiarColor($event)">
+      <ion-list-header>
+        <ion-label>Colores</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Blanco</ion-label>
+        <ion-radio value="Blanco"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Celeste</ion-label>
+        <ion-radio value="Celeste"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Azul</ion-label>
+        <ion-radio value="Azul"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Morado</ion-label>
+        <ion-radio value="Morado"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Amarillo</ion-label>
+        <ion-radio value="Amarillo"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Naranja</ion-label>
+        <ion-radio value="Naranja"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rosa</ion-label>
+        <ion-radio value="Rosa"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rojo</ion-label>
+        <ion-radio value="Rojo"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Verde</ion-label>
+        <ion-radio value="Verde"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dorado</ion-label>
+        <ion-radio value="Dorado"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
