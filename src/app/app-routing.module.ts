@@ -10,10 +10,23 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
-    path: 'colores',
-    loadChildren: () => import('./colores/colores.module').then( m => m.ColoresPageModule)
   },
+  {
+    path: 'colores',
+    loadChildren: () => import('./paginas/colores/colores.module').then( m => m.ColoresPageModule)
+  },  {
+    path: 'ajustes',
+    loadChildren: () => import('./paginas/ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
+  {
+    path: 'soporte',
+    loadChildren: () => import('./paginas/soporte/soporte.module').then( m => m.SoportePageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./paginas/info/info.module').then( m => m.InfoPageModule)
+  },
+
 
 ];
 

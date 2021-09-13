@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConcentradoraServiceService } from '../services/concentradora-service.service';
+import { ConcentradoraServiceService } from '../../services/concentradora-service.service';
 
 @Component({
   selector: 'app-colores',
