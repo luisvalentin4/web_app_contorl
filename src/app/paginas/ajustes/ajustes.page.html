@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>ajustes</ion-title>
+    <ion-title>Ajustes</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,8 +29,8 @@
       <ion-label>Puerto</ion-label>
       <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="puerto"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-button color="primary" (click)="guardarIP">GUARDAR</ion-button>
-    </ion-item>
+
+      <ion-button shape="round" expand="block" color="primary" (click)="guardarIP">GUARDAR</ion-button>
+
   </ion-list>
 </ion-content>
