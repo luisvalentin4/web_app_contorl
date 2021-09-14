@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button> <!-- Dejé el boton de regreso a la página de luces, olvidé comentarte que así lo había pedido el Inge -->
     </ion-buttons>
     <ion-title>Color Led</ion-title>
   </ion-toolbar>
@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-radio-group value="Blanco" (ionChange)="cambiarColor($event)">
+    <ion-radio-group value="Blanco"(ionChange)="cambiarColor($event)">
       <ion-item>
         <ion-label>Blanco</ion-label>
         <ion-radio value="Blanco"></ion-radio>

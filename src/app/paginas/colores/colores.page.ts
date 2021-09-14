@@ -8,6 +8,36 @@ import { ConcentradoraServiceService } from '../../services/concentradora-servic
 })
 export class ColoresPage implements OnInit {
 
+  //Obtener los datos de cual luz está encendida
+  tokenRef = localStorage.getItem("tokenGRef");
+  tokenMC = localStorage.getItem("tokenGMC");
+  tokenPos = localStorage.getItem("tokenGPos");
+  tokenBB = localStorage.getItem("tokenGBB");
+  tokenBA = localStorage.getItem("tokenGBA");
+  tokenPal = localStorage.getItem("tokenGPal");
+  tokenPA = localStorage.getItem("tokenGPA");
+
+  //Obtener los datos de cual color seleccionó
+  tokenColor = localStorage.getItem("tokenGColor");
+
+  //PRUEBA
+
+  radioSelected= '';
+  colores: any[] = [
+    {id: 1, nombre: "Blanco"},
+    {id: 2, nombre: "Celeste"},
+    {id: 3, nombre: "Azul"},
+    {id: 4, nombre: "Morado"},
+    {id: 5, nombre: "Amarillo"},
+    {id: 6, nombre: "Naranja"},
+    {id: 7, nombre: "Rosa"},
+    {id: 8, nombre: "Rojo"},
+    {id: 9, nombre: "Verde"},
+    {id: 10, nombre: "Dorado"}
+  ]
+  
+//TERMINA PRUEBA
+
   constructor(private concentradoraService: ConcentradoraServiceService) { }
 
   ngOnInit() {
@@ -21,31 +51,45 @@ export class ColoresPage implements OnInit {
           this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Celeste":
-          console.log("Celeste");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          if(this.tokenRef == 'true'){
+            console.log("Reflectores Celeste");
+          }else if(this.tokenMC == 'true'){
+            console.log("Muro Casa Celeste");
+          }
           break;
         case "Azul":
-          console.log("Azul");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          event.returnValue = this.tokenColor;
+          console.log(event.detail.value);
           break;
         case "Morado":
-          console.log("Morado");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Amarillo":
-          console.log("Amarillo");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Naranja":
-          console.log("Naranja");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Rosa":
-          console.log("Rosa");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Rojo":
-          console.log("Rojo");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Verde":
-          console.log("Verde");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
         case "Dorado":
-          console.log("Dorado");
+          localStorage.setItem('tokenGColor',event.detail.value);
+          console.log(event.detail.value);
           break;
       }
     }
