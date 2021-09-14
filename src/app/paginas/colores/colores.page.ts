@@ -21,7 +21,6 @@ export class ColoresPage implements OnInit {
   tokenColor = localStorage.getItem("tokenGColor");
 
   //PRUEBA
-
   radioSelected= '';
   colores: any[] = [
     {id: 1, nombre: "Blanco"},
@@ -35,8 +34,7 @@ export class ColoresPage implements OnInit {
     {id: 9, nombre: "Verde"},
     {id: 10, nombre: "Dorado"}
   ]
-  
-//TERMINA PRUEBA
+  //TERMINA PRUEBA
 
   constructor(private concentradoraService: ConcentradoraServiceService) { }
 
