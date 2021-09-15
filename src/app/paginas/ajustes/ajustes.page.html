@@ -20,7 +20,7 @@
     </ion-item>
     <ion-item (click)="modificarIP()">
       <ion-label>Modificar</ion-label>
-      <ion-checkbox checked={{checado}}></ion-checkbox>
+      <ion-checkbox checked={{checado}} color="dark"></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label>IP_Server</ion-label>
@@ -30,7 +30,7 @@
       <ion-label>Puerto</ion-label>
       <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="puerto" clearInput></ion-input>
     </ion-item>
-    <ion-button shape="round" expand="block" color="primary" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
+    <ion-button shape="round" expand="block" color="dark" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
     
   </ion-list>
 </ion-content>

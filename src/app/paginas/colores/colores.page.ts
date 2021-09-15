@@ -65,6 +65,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -73,6 +74,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -81,6 +83,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -89,6 +92,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -97,6 +101,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -105,6 +110,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -113,6 +119,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -121,6 +128,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -129,6 +137,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;
@@ -137,6 +146,7 @@ export class ColoresPage implements OnInit {
           for(let luz of this.luces){
             if(luz.nombre == 'true'){
               console.log("Enciende: ", luz.name, " color ", event.detail.value);
+              //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
             }
           }
           break;

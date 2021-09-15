@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button color="primary"></ion-menu-button>
+      <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title>
       Iluminación
@@ -18,7 +18,7 @@
 
   <ion-item>
     <ion-label>Cambio</ion-label>
-    <ion-icon slot="end" name="menu-outline" color="primary" (click)="order()" (click)="addStorage()"></ion-icon>
+    <ion-icon slot="end" name="menu-outline" color="dark" (click)="order()" (click)="addStorage()"></ion-icon>
   </ion-item>
 
   <ion-reorder-group (ionItemReorder)="doReorder($event)" [disabled]="orderBool">
@@ -26,7 +26,7 @@
     <ion-item *ngFor="let f of focos">
       <ion-label *ngIf="f.estado; then solIcon else lunaIcon" class="editIcon"></ion-label>
       <ion-label>{{f.nombre}}</ion-label>
-      <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
+      <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado" color="dark"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
       <ion-reorder slot="end"></ion-reorder>
      </ion-item>
 
