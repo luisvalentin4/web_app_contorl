@@ -1,25 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="home"></ion-back-button> <!-- Dejé el boton de regreso a la página de luces, olvidé comentarte que así lo había pedido el Inge -->
     </ion-buttons>
     <ion-title>Ajustes</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!--Agregé el localstorage-->
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label>IP_Server</ion-label>
-      <ion-label>{{ ipServer || "192.168.XX.XX" }}</ion-label>
+      <ion-label>{{ tokenIpServer || ipServer }}</ion-label>
     </ion-item>
     <ion-item>
       <ion-label>Puerto</ion-label>
-      <ion-label>{{ puerto || "192.168.XX.XX" }}</ion-label>
+      <ion-label>{{ tokenPuerto || puerto }}</ion-label>
     </ion-item>
     <ion-item (click)="modificarIP()">
       <ion-label>Modificar</ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-checkbox checked={{checado}}></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label>IP_Server</ion-label>
@@ -29,8 +30,8 @@
       <ion-label>Puerto</ion-label>
       <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="puerto"></ion-input>
     </ion-item>
-
-      <ion-button shape="round" expand="block" color="primary" (click)="guardarIP">GUARDAR</ion-button>
-
+    <ion-item>
+      <ion-button shape="round" expand="block" color="primary" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
+    </ion-item>
   </ion-list>
 </ion-content>
