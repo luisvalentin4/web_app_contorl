@@ -65,7 +65,6 @@ export class HomePage {
   orderBool = true;
   
   constructor() {
-    this.addStorage();
   }
 
   //Declara Array con los datos de los focos

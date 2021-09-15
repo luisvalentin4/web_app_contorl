@@ -12,7 +12,7 @@
   <ion-list>
     <ion-item>
       <ion-label>IP_Server</ion-label>
-      <ion-label>{{ tokenIpServer || ipServer }}</ion-label>
+      <ion-label>{{ ipServer || tokenIpServer }}</ion-label>
     </ion-item>
     <ion-item>
       <ion-label>Puerto</ion-label>
@@ -24,14 +24,13 @@
     </ion-item>
     <ion-item>
       <ion-label>IP_Server</ion-label>
-      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="ipServer"></ion-input>
+      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="ipServer" clearInput></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Puerto</ion-label>
-      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="puerto"></ion-input>
+      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="puerto" clearInput></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-button shape="round" expand="block" color="primary" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
-    </ion-item>
+    <ion-button shape="round" expand="block" color="primary" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
+    
   </ion-list>
 </ion-content>

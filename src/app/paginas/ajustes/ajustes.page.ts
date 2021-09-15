@@ -29,8 +29,11 @@ export class AjustesPage implements OnInit {
   //Guardar los datos en localStorage
   //Se graban en el dispositivo para no perderlo al cambiar de página y poderlo llamar en otra
   guardarIP(){
-    localStorage.setItem('tokenIpServer', this.ipServer);
-    localStorage.setItem('tokenPuerto', this.puerto);
+    if(this.ipServer != "" ){
+      localStorage.setItem('tokenIpServer', this.ipServer);
+    }
+    if(this.puerto != ""){
+      localStorage.setItem('tokenPuerto', this.puerto);
+    }
   }
-
 }
