@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { empty } from '@angular-devkit/schematics';
+import { Component, ViewChild } from '@angular/core'; //ViewChild para Reorder
+
+//Para Reorder
+import { IonReorderGroup } from '@ionic/angular';
+import { ItemReorderEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +12,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  //Para Reorder
+  @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
+
+  //Obtener el valor de los focos seleccionados
+  tokenET = localStorage.getItem('tokenGET');
   tokenRef = localStorage.getItem('tokenGRef');
   tokenMC = localStorage.getItem('tokenGMC');
   tokenMV = localStorage.getItem('tokenGMV');
@@ -25,10 +35,10 @@ export class HomePage {
   tokenCho = localStorage.getItem('tokenGCho');
   tokenJet = localStorage.getItem('tokenGJet');
 
-  constructor() {}
+  tokenColor = localStorage.getItem('tokenGColor'); //Obtener el valor del color seleccionado
 
   focos: any[] = [
-    {id: 1, nombre: "Encender Todo", estado: false},
+    {id: 1, nombre: "Encender Todo", estado: (false || this.tokenET)}, //Estado: false ó el dato que se seleccionó
     {id: 2, nombre: "Reflectores", estado: (false || this.tokenRef)},
     {id: 3, nombre: "Muro Casa", estado: (false || this.tokenMC)},
     {id: 4, nombre: "Muro Verde", estado: (false || this.tokenMV)}, //Nuevo
@@ -48,10 +58,43 @@ export class HomePage {
     {id: 18, nombre: "Jets", estado: (false || this.tokenJet)} //Nuevo
   ]
 
+  //Para Reorder
+  
+  orderBool = true;
+  
+  constructor() {}
+
+  //Declara Array con los datos de los focos
+
+  //COMIENZA PRUEBA REORDER
+  doReorder(event){
+    var reFocos = localStorage.getItem('misFocos');
+    this.focos = JSON.parse (reFocos);
+
+    this.focos = event.detail.complete(this.focos);
+
+    localStorage.setItem('misFocos', JSON.stringify(this.focos));
+    var reFocos = localStorage.getItem('misFocos');
+    this.focos = JSON.parse (reFocos);
+  }
+  order(){
+    console.log(this.focos);
+    this.orderBool = !this.orderBool;
+  }
+  addStorage(){
+    localStorage.setItem('misFocos', JSON.stringify(this.focos));
+  }
+
+  //TERMINA PRUEBA REORDER
+
   public encender(event, nombre: string){
+    if(this.tokenColor == null){ //Si el valor de tokenColor es null colocarlo en blanco predeterminado
+      localStorage.setItem('tokenGColor', "Blanco");
+    }
     if(event.detail.checked == true){
       switch(nombre){
         case "Encender Todo":
+          localStorage.setItem('tokenGET',this.focos[0].estado); //Se asigna el valor en localStorage del estado en dicho puesto del Array
           for(let foco of this.focos){
             var buscar = this.focos.findIndex((obj => obj.nombre == foco.nombre));
             this.focos[buscar].estado = true;
@@ -60,77 +103,95 @@ export class HomePage {
           this.focos[cambiaTextOnOffTodo].nombre = "Apagar Todo";
           break;
         case "Reflectores":
-          console.log("Encendido Reflectores", this.focos[1].estado);
-          localStorage.setItem('tokenGRef',this.focos[1].estado);
+          localStorage.setItem('tokenGRef',this.focos[1].estado); //Se asigna el valor en localStorage del estado en dicho puesto del Array
+          console.log("Encendido ", this.focos[1].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Muro Casa":
-          console.log("Encendido Muro Casa", this.focos[2].estado);
           localStorage.setItem('tokenGMC',this.focos[2].estado);
+          console.log("Encendido ", this.focos[2].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Muro Verde":
-          console.log("Encendido Muro Verde", this.focos[3].estado);
           localStorage.setItem('tokenGMV',this.focos[3].estado);
+          console.log("Encendido ", this.focos[3].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Estacas Jardín":
-          console.log("Encendido Estacas Jardín", this.focos[4].estado);
           localStorage.setItem('tokenGEJ',this.focos[4].estado);
+          console.log("Encendido ", this.focos[4].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Poste":
-          console.log("Encendido Poste", this.focos[5].estado);
           localStorage.setItem('tokenGPos',this.focos[5].estado);
+          console.log("Encendido ", this.focos[5].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Barda Banos":
-          console.log("Encendido Barda Banos", this.focos[6].estado);
           localStorage.setItem('tokenGBB',this.focos[6].estado);
+          console.log("Encendido ", this.focos[6].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Barda Alberca":
-          console.log("Encendido Barda Alberca", this.focos[7].estado);
           localStorage.setItem('tokenGBA',this.focos[7].estado);
+          console.log("Encendido ", this.focos[7].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Palapa":
-          console.log("Encendido Palapa", this.focos[8].estado);
           localStorage.setItem('tokenGPal',this.focos[8].estado);
+          console.log("Encendido ", this.focos[8].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
         case "Piso Alberca":
-          console.log("Encendido Piso Alberca", this.focos[9].estado);
           localStorage.setItem('tokenGPA',this.focos[9].estado);
+          console.log("Encendido ", this.focos[9].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
           break;
-          case "Piso Terraza":
-            console.log("Encendido Piso Terraza", this.focos[10].estado);
-            localStorage.setItem('tokenGPT',this.focos[10].estado);
-            break;
-          case "Estacas Alberca":
-            console.log("Encendido Estacas Alberca", this.focos[11].estado);
-            localStorage.setItem('tokenGEA',this.focos[11].estado);
-            break;
-          case "Alberca":
-            console.log("Encendido Alberca", this.focos[12].estado);
-            localStorage.setItem('tokenGAlb',this.focos[12].estado);
-            break;
-          case "Luz Jacuzzi":
-            console.log("Encendido Luz Jacuzzi", this.focos[13].estado);
-            localStorage.setItem('tokenGLJ',this.focos[13].estado);
-            break;
-          case "Ceiba":
-            console.log("Encendido Ceiba", this.focos[14].estado);
-            localStorage.setItem('tokenGCei',this.focos[14].estado);
-            break;
-          case "Jacuzzi":
-            console.log("Encendido Jacuzzi", this.focos[15].estado);
-            localStorage.setItem('tokenGJac',this.focos[15].estado);
-            break;
-          case "Chorros":
-            console.log("Encendido Chorros", this.focos[16].estado);
-            localStorage.setItem('tokenGCho',this.focos[16].estado);
-            break;
-          case "Jets":
-            console.log("Encendido Jets", this.focos[17].estado);
-            localStorage.setItem('tokenGJet',this.focos[17].estado);
-            break;
+        case "Piso Terraza":
+          localStorage.setItem('tokenGPT',this.focos[10].estado);
+          console.log("Encendido ", this.focos[10].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Estacas Alberca":
+          localStorage.setItem('tokenGEA',this.focos[11].estado);
+          console.log("Encendido ", this.focos[11].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Alberca":
+          localStorage.setItem('tokenGAlb',this.focos[12].estado);
+          console.log("Encendido ", this.focos[12].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Luz Jacuzzi":
+          localStorage.setItem('tokenGLJ',this.focos[13].estado);
+          console.log("Encendido ", this.focos[13].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Ceiba":
+          localStorage.setItem('tokenGCei',this.focos[14].estado);
+          console.log("Encendido ", this.focos[14].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Jacuzzi":
+          localStorage.setItem('tokenGJac',this.focos[15].estado);
+          console.log("Encendido ", this.focos[15].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Chorros":
+          localStorage.setItem('tokenGCho',this.focos[16].estado);
+          console.log("Encendido ", this.focos[16].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
+        case "Jets":
+          localStorage.setItem('tokenGJet',this.focos[17].estado);
+          console.log("Encendido ", this.focos[17].nombre, " color ", this.tokenColor);
+          //this.concentradoraService.getServ().subscribe(res=>{console.log(res)});
+          break;
       }
     }else{
       switch(nombre){
         case "Apagar Todo":
+          localStorage.setItem('tokenGET',this.focos[0].estado); //Se asigna el valor en localStorage del estado en dicho puesto del Array
           for(let foco of this.focos){
             var buscar = this.focos.findIndex((obj => obj.nombre == foco.nombre));
             this.focos[buscar].estado = false;
@@ -139,75 +200,74 @@ export class HomePage {
           this.focos[cambiaTextOnOffTodo].nombre = "Encender Todo";
           break;
           case "Reflectores":
-            console.log("Apagado Reflectores", this.focos[1].estado);
-            localStorage.setItem('tokenGRef',this.focos[1].estado);
+            localStorage.setItem('tokenGRef',this.focos[1].estado); //Se asigna el valor en localStorage del estado en dicho puesto del Array
+            console.log("Apagado ", this.focos[1].nombre);
             break;
           case "Muro Casa":
-            console.log("Apagado Muro Casa", this.focos[2].estado);
             localStorage.setItem('tokenGMC',this.focos[2].estado);
+            console.log("Apagado ", this.focos[2].nombre);
             break;
           case "Muro Verde":
-            console.log("Apagado Muro Verde", this.focos[3].estado);
             localStorage.setItem('tokenGMV',this.focos[3].estado);
+            console.log("Apagado ", this.focos[3].nombre);
             break;
           case "Estacas Jardín":
-            console.log("Apagado Estacas Jardín", this.focos[4].estado);
             localStorage.setItem('tokenGEJ',this.focos[4].estado);
+            console.log("Apagado ", this.focos[4].nombre);
             break;
           case "Poste":
-            console.log("Apagado Poste", this.focos[5].estado);
             localStorage.setItem('tokenGPos',this.focos[5].estado);
+            console.log("Apagado ", this.focos[5].nombre);
             break;
           case "Barda Banos":
-            console.log("Apagado Barda Banos", this.focos[6].estado);
             localStorage.setItem('tokenGBB',this.focos[6].estado);
+            console.log("Apagado ", this.focos[6].nombre);
             break;
           case "Barda Alberca":
-            console.log("Apagado Barda Alberca", this.focos[7].estado);
             localStorage.setItem('tokenGBA',this.focos[7].estado);
+            console.log("Apagado ", this.focos[7].nombre);
             break;
           case "Palapa":
-            console.log("Apagado Palapa", this.focos[8].estado);
             localStorage.setItem('tokenGPal',this.focos[8].estado);
+            console.log("Apagado ", this.focos[8].nombre);
             break;
           case "Piso Alberca":
-            console.log("Apagado Piso Alberca", this.focos[9].estado);
             localStorage.setItem('tokenGPA',this.focos[9].estado);
+            console.log("Apagado ", this.focos[9].nombre);
             break;
             case "Piso Terraza":
-              console.log("Apagado Piso Terraza", this.focos[10].estado);
               localStorage.setItem('tokenGPT',this.focos[10].estado);
+              console.log("Apagado ", this.focos[10].nombre);
               break;
             case "Estacas Alberca":
-              console.log("Apagado Estacas Alberca", this.focos[11].estado);
               localStorage.setItem('tokenGEA',this.focos[11].estado);
+              console.log("Apagado ", this.focos[11].nombre);
               break;
             case "Alberca":
-              console.log("Apagado Alberca", this.focos[12].estado);
               localStorage.setItem('tokenGAlb',this.focos[12].estado);
+              console.log("Apagado ", this.focos[12].nombre);
               break;
             case "Luz Jacuzzi":
-              console.log("Apagado Luz Jacuzzi", this.focos[13].estado);
               localStorage.setItem('tokenGLJ',this.focos[13].estado);
+              console.log("Apagado ", this.focos[13].nombre);
               break;
             case "Ceiba":
-              console.log("Apagado Ceiba", this.focos[14].estado);
               localStorage.setItem('tokenGCei',this.focos[14].estado);
+              console.log("Apagado ", this.focos[14].nombre);
               break;
             case "Jacuzzi":
-              console.log("Apagado Jacuzzi", this.focos[15].estado);
               localStorage.setItem('tokenGJac',this.focos[15].estado);
+              console.log("Apagado ", this.focos[15].nombre);
               break;
             case "Chorros":
-              console.log("Apagado Chorros", this.focos[16].estado);
               localStorage.setItem('tokenGCho',this.focos[16].estado);
+              console.log("Apagado ", this.focos[16].nombre);
               break;
             case "Jets":
-              console.log("Apagado Jets", this.focos[17].estado);
               localStorage.setItem('tokenGJet',this.focos[17].estado);
+              console.log("Apagado ", this.focos[17].nombre);
               break;
       }
     }
   }
-
 }
