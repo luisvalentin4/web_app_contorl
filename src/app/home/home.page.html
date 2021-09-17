@@ -23,7 +23,7 @@
 
   <ion-reorder-group (ionItemReorder)="doReorder($event)" [disabled]="orderBool">
   <!--<ion-list>-->
-    <ion-item *ngFor="let f of focos">
+    <ion-item *ngFor="let f of focosNew">
       <ion-label *ngIf="f.estado; then solIcon else lunaIcon" class="editIcon"></ion-label>
       <ion-label>{{f.nombre}}</ion-label>
       <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado" color="dark"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->

@@ -1,16 +1,20 @@
 import { empty } from '@angular-devkit/schematics';
-import { Component, ViewChild } from '@angular/core'; //ViewChild para Reorder
+import { Component, ViewChild, OnInit } from '@angular/core'; //ViewChild para Reorder
 
 //Para Reorder
 import { IonReorderGroup } from '@ionic/angular';
 import { ItemReorderEventDetail } from '@ionic/core';
+
+//Para JSON
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   //Para Reorder
   @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
@@ -37,6 +41,8 @@ export class HomePage {
 
   tokenColor = localStorage.getItem('tokenGColor'); //Obtener el valor del color seleccionado
 
+  focosNew: any = []; //JSON
+
   focos: any[] = [
     {id: 1, nombre: "Encender Todo", estado: (false || this.tokenET)}, //Estado: false ó el dato que se seleccionó
     {id: 2, nombre: "Reflectores", estado: (false || this.tokenRef)},
@@ -62,7 +68,7 @@ export class HomePage {
   
   orderBool = true;
   
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   //Declara Array con los datos de los focos
 
@@ -84,8 +90,34 @@ export class HomePage {
   addStorage(){
     localStorage.setItem('misFocos', JSON.stringify(this.focos));
   }
-
   //TERMINA PRUEBA REORDER
+
+  ngOnInit(){
+    this.getAlumbrado().subscribe(res=>{
+        console.log("Res",res);
+        this.focosNew = res;
+
+        console.log(this.focos);
+        
+      }
+    )
+  }
+
+  //COMIENZA JSON
+  getAlumbrado(){
+    return this.http
+    .get("assets/archivos/alumbrado.json")
+    .pipe(
+      map(
+        (res:any)=>{
+          return res.luces;
+        }
+      )
+    )
+  }
+  //TERMINA JSON
+
+
 
   public encender(event, nombre: string){
     if(this.tokenColor == null){ //Si el valor de tokenColor es null colocarlo en blanco predeterminado

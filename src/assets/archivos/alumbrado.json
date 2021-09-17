@@ -1,0 +1,77 @@
+{
+    "luces": [
+        {
+            "id": "1",
+            "nombre": "Encender Todo",
+            "estado": "(false || this.tokenET)"
+        },
+        {   "id": "2",
+            "nombre": "Reflectores",
+            "estado": "(false || this.tokenRef)"
+        },
+        {   "id": "3",
+            "nombre": "Muro Casa",
+            "estado": "(false || this.tokenMC)"
+        },
+        {   "id": "4",
+            "nombre": "Muro Verde",
+            "estado": "(false || this.tokenMV)"
+        },
+        {   "id": "5",
+            "nombre": "Estacas Jardín",
+            "estado": "(false || this.tokenEJ)"
+        },
+        {   "id": "6",
+            "nombre": "Poste",
+            "estado": "(false || this.tokenPos)"
+        },
+        {   "id": "7",
+            "nombre": "Barda Banos",
+            "estado": "(false || this.tokenBB)"
+        },
+        {   "id": "8",
+            "nombre": "Barda Alberca",
+            "estado": "(false || this.tokenBA)"
+        },
+        {   "id": "9",
+            "nombre": "Palapa",
+            "estado": "(false || this.tokenPal)"
+        },
+        {   "id": "10",
+            "nombre": "Piso Alberca",
+            "estado": "(false || this.tokenPA)"
+        },
+        {   "id": "11",
+            "nombre": "Piso Terraza",
+            "estado": "(false || this.tokenPT)"
+        },
+        {   "id": "12",
+            "nombre": "Estacas Alberca",
+            "estado": "(false || this.tokenEA)"
+        },
+        {   "id": "13",
+            "nombre": "Alberca",
+            "estado": "(false || this.tokenAlb)"
+        },
+        {   "id": "14",
+            "nombre": "Luz Jacuzzi",
+            "estado": "(false || this.tokenLJ)"
+        },
+        {   "id": "15",
+            "nombre": "Ceiba",
+            "estado": "(false || this.tokenCei)"
+        },
+        {   "id": "16",
+            "nombre": "Jacuzzi",
+            "estado": "(false || this.tokenJac)"
+        },
+        {   "id": "17",
+            "nombre": "Chorros",
+            "estado": "(false || this.tokenCho)"
+        },
+        {   "id": "18",
+            "nombre": "Jets",
+            "estado": "(false || this.tokenJet)"
+        }
+    ]
+}
