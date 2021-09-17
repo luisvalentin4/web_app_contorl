@@ -3,75 +3,75 @@
         {
             "id": "1",
             "nombre": "Encender Todo",
-            "estado": "(false || this.tokenET)"
+            "estado": "false"
         },
         {   "id": "2",
             "nombre": "Reflectores",
-            "estado": "(false || this.tokenRef)"
+            "estado": "false"
         },
         {   "id": "3",
             "nombre": "Muro Casa",
-            "estado": "(false || this.tokenMC)"
+            "estado": "false"
         },
         {   "id": "4",
             "nombre": "Muro Verde",
-            "estado": "(false || this.tokenMV)"
+            "estado": "false"
         },
         {   "id": "5",
             "nombre": "Estacas Jardín",
-            "estado": "(false || this.tokenEJ)"
+            "estado": "false"
         },
         {   "id": "6",
             "nombre": "Poste",
-            "estado": "(false || this.tokenPos)"
+            "estado": "false"
         },
         {   "id": "7",
             "nombre": "Barda Banos",
-            "estado": "(false || this.tokenBB)"
+            "estado": "false"
         },
         {   "id": "8",
             "nombre": "Barda Alberca",
-            "estado": "(false || this.tokenBA)"
+            "estado": "false"
         },
         {   "id": "9",
             "nombre": "Palapa",
-            "estado": "(false || this.tokenPal)"
+            "estado": "false"
         },
         {   "id": "10",
             "nombre": "Piso Alberca",
-            "estado": "(false || this.tokenPA)"
+            "estado": "false"
         },
         {   "id": "11",
             "nombre": "Piso Terraza",
-            "estado": "(false || this.tokenPT)"
+            "estado": "false"
         },
         {   "id": "12",
             "nombre": "Estacas Alberca",
-            "estado": "(false || this.tokenEA)"
+            "estado": "false"
         },
         {   "id": "13",
             "nombre": "Alberca",
-            "estado": "(false || this.tokenAlb)"
+            "estado": "false"
         },
         {   "id": "14",
             "nombre": "Luz Jacuzzi",
-            "estado": "(false || this.tokenLJ)"
+            "estado": "false"
         },
         {   "id": "15",
             "nombre": "Ceiba",
-            "estado": "(false || this.tokenCei)"
+            "estado": "false"
         },
         {   "id": "16",
             "nombre": "Jacuzzi",
-            "estado": "(false || this.tokenJac)"
+            "estado": "false"
         },
         {   "id": "17",
             "nombre": "Chorros",
-            "estado": "(false || this.tokenCho)"
+            "estado": "false"
         },
         {   "id": "18",
             "nombre": "Jets",
-            "estado": "(false || this.tokenJet)"
+            "estado": "false"
         }
     ]
 }
