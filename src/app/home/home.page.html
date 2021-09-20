@@ -1,4 +1,3 @@
-  
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -17,27 +16,20 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-item>
-    <ion-label>Cambio</ion-label>
-    <ion-icon slot="end" name="menu-outline" color="dark" (click)="order()" (click)="addStorage()"></ion-icon>
-  </ion-item>
-
-  <ion-reorder-group (ionItemReorder)="doReorder($event)" [disabled]="orderBool">
-  <!--<ion-list>-->
+  <ion-list>
     <ion-item *ngFor="let f of focosNew">
-      <ion-label *ngIf="f.estado; then solIcon else lunaIcon" class="editIcon"></ion-label>
+      <ion-label *ngIf="f.estado; then solIcon else lunaIcon" slot="start"></ion-label>
       <ion-label>{{f.nombre}}</ion-label>
-      <ion-toggle (ionChange)="encender($event, f.nombre)" [(ngModel)]="f.estado" color="dark"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
+      <ion-toggle (ionChange)="encender($event, f.nombre); colores()" [(ngModel)]="f.estado" color="dark"></ion-toggle> <!--[(ngModel)] para la lista creada en home.page.ts-->
       <ion-reorder slot="end"></ion-reorder>
      </ion-item>
 
     <ng-template #solIcon>
-      <ion-icon name="sunny-outline"></ion-icon>
+      <ion-icon  name="radio-button-on-outline" [class]="solicon" id="solicon-size"></ion-icon>
     </ng-template>
     <ng-template #lunaIcon>
-      <ion-icon name="moon-outline"></ion-icon>
+      <ion-icon name="radio-button-off-outline" class="lunaicon"></ion-icon>
     </ng-template>
-  <!--</ion-list>-->
-</ion-reorder-group>
+  </ion-list>
 
 </ion-content>
