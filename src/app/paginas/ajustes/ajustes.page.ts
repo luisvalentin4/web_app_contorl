@@ -36,5 +36,4 @@ export class AjustesPage implements OnInit {
       localStorage.setItem('tokenPuerto', this.puerto);
     }
   }
-
 }

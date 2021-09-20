@@ -24,7 +24,7 @@
     </ion-item>
     <ion-item>
       <ion-label>IP_Server</ion-label>
-      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="ipServer"></ion-input>
+      <ion-input disabled="{{isDisabled}}" type="text" placeholder="192.168.XX.XX" [(ngModel)]="ipServer" clearInput></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Puerto</ion-label>
@@ -33,5 +33,7 @@
     <ion-item>
       <ion-button shape="round" expand="block" color="primary" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
     </ion-item>
+    <ion-button shape="round" expand="block" color="dark" disabled="{{isDisabled}}" (click)="guardarIP()" (click)="modificarIP()">GUARDAR</ion-button>
+    
   </ion-list>
 </ion-content>
