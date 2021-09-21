@@ -1,5 +1,7 @@
 {
   "name": "app_control_netled",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

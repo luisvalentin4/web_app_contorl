@@ -1,14 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button> <!-- Dejé el boton de regreso a la página de luces, olvidé comentarte que así lo había pedido el Inge -->
+      <!-- <ion-back-button defaultHref="home"></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Información</ion-title>
+    <ion-title>Info</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-label>
-    Versión: 1.0
-  </ion-label>
+  <ion-text><p class="titulo">Control de NETLED</p>
+    Es la manera definitiva para controlar
+    la iluminación de su hogar o negocio<br><br>
+    La misión de Control es ayudar a facilitar
+    la administración de las luces que se tienen
+    en uso.<br><br>  
+  <div class="centrartexto">
+    <div class="letrapequeña">
+      <p>Versión: 1.0</p>
+      <p>Desarrollado por:</p>
+    </div>
+    <ion-img src="../../../assets/icon/logo03.png" class="img"></ion-img>
+  </div>
+</ion-text>
+    
+  
+  
 </ion-content>
+
+<ion-footer class="centrartexto">
+  <ion-toolbar color="dark">
+    <ion-label>© 2021</ion-label>
+  </ion-toolbar>
+</ion-footer>

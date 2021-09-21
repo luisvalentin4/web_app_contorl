@@ -39,7 +39,7 @@ export class HomePage implements OnInit {
 
   solicon: string;
   
-  constructor(private http: HttpClient, private concentradoraService: ConcentradoraServiceService) {}
+  constructor(private http: HttpClient, private concentradoraService: ConcentradoraServiceService,){}
 
   ngOnInit(){
     this.getAlumbrado().subscribe(res=>{
@@ -68,8 +68,6 @@ export class HomePage implements OnInit {
     this.solicon = this.tokenColor;
   }
   //TERMINA COLORES
-
-
 
   public encender(event, nombre: string){
     if(this.tokenColor == null){ //Si el valor de tokenColor es null colocarlo en blanco predeterminado

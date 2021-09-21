@@ -12,6 +12,7 @@ import { ConcentradoraServiceService } from './services/concentradora-service.se
 
 import { IonicStorageModule } from '@ionic/storage-angular'
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

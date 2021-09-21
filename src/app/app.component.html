@@ -1,31 +1,31 @@
 <ion-app>
   <!--<ion-split-pane contentId="main-content"></ion-split-pane>     Adaptarse a pantallas-->
-    <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+    <ion-menu side="start" menuId="custom" contentId="main">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="dark">
           <ion-title>Menú</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
+      <ion-content color="secundarycolor">
         <ion-list>
           <ion-menu-toggle auto-hide="false">
-            <ion-item [routerDirection]="'root'" [routerLink]="'/home'">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/home'" color="secundarycolor">
               <ion-icon slot="start" [name]="'home-outline'"></ion-icon>
               <ion-label>Illuminacion</ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/colores'">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/colores'" color="secundarycolor">
               <ion-icon slot="start" [name]="'color-palette-outline'"></ion-icon>
               <ion-label>Color Led</ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/ajustes'">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/ajustes'" color="secundarycolor">
               <ion-icon slot="start" [name]="'settings-outline'"></ion-icon>
               <ion-label>Ajustes</ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/soporte'">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/soporte'" color="secundarycolor">
               <ion-icon slot="start" [name]="'call-outline'"></ion-icon>
               <ion-label>Soporte</ion-label>
             </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/info'">
+            <ion-item [routerDirection]="'root'" [routerLink]="'/info'" color="secundarycolor">
               <ion-icon slot="start" [name]="'information-circle-outline'"></ion-icon>
               <ion-label>Informaciòn</ion-label>
             </ion-item>
