@@ -1,4 +1,5 @@
 // import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { asWindowsPath } from '@angular-devkit/core';
 import { Component } from '@angular/core';
 
 @Component({
